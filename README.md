@@ -27,4 +27,4 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install
 
 ### Run Docker
 
-```docker run --gpus all my-python-gpu-image```
+```docker run --shm-size=20g --gpus all my-python-gpu-image```
