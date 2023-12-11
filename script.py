@@ -1,7 +1,22 @@
+import os
 from ultralytics import YOLO, checks, hub
+
+# Check for required environment variables
+login_token = os.environ.get('ULTRALYTICS_LOGIN_TOKEN')
+model_url = os.environ.get('ULTRALYTICS_MODEL_URL')
+
+# Validate the presence of environment variables
+if not login_token or not model_url:
+    raise ValueError("Please set ULTRALYTICS_LOGIN_TOKEN and ULTRALYTICS_MODEL_URL environment variables.")
+
+# Perform checks
 checks()
 
-hub.login('ab084fa7d461a2674af6880e5199604533945d2634')
+# Login to Ultralytics hub
+hub.login(login_token)
 
-model = YOLO('https://hub.ultralytics.com/models/T4sZgzaD4gSkmZbYcxZa')
+# Create YOLO model
+model = YOLO(model_url)
+
+# Train the model
 results = model.train()

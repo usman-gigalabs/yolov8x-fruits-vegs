@@ -1,0 +1,7 @@
+version: '3'
+services:
+  yolov8x:
+    image: usmanfaisalgigalabs/yolov8x-custom:latest
+    environment:
+      - ULTRALYTICS_LOGIN_TOKEN=ab084fa7d461a2674af6880e5199604533945d2634
+      - ULTRALYTICS_MODEL_URL=https://hub.ultralytics.com/models/T4sZgzaD4gSkmZbYcxZa
