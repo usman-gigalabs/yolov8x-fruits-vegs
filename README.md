@@ -23,8 +23,21 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install
 
 ### Build Docker
 
-```docker build -t my-python-gpu-image .```
+```docker build -t usmanfaisalgigalabs/yolov8x-custom:latest .```
 
 ### Run Docker
 
-```docker run --shm-size=20g --gpus all my-python-gpu-image```
+```docker run --shm-size=20g --gpus all usmanfaisalgigalabs/yolov8x-custom:latest``
+
+### Run through Docker-Compose
+
+To build and run your application using Docker Compose, use the following commands:
+
+```
+docker-compose -f docker-compose.develop.yml build
+docker-compose -f docker-compose.develop.yml up -d
+```
+
+To run docker image using Docker Compose, use the following commands:
+
+``` docker-compose up -d ```
